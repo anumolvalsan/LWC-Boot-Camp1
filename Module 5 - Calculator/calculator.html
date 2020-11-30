@@ -1,0 +1,74 @@
+    <template>
+        <lightning-card title="Full Calculator" icon-name="standard:number_input">
+           
+                Calc Expression :<br/>
+                {exp} <br/>
+                <br/>
+                Results:<br/>
+                {ans}<br/> 
+
+    
+       <!-- <div class="slds-grid slds-wrap slds-var-m-around_medium" style="width: 260px">-->
+        <lightning-layout >
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="1" name="1" onclick={numberchange} value="1"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="2" name="2" onclick={numberchange} value="2"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="3" name="3" onclick={numberchange} value="3"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand" label="+" name="+" onclick={calculate}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="4" name="4" onclick={numberchange} value="4"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="5" name="5" onclick={numberchange} value="5"></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="6" name="6" onclick={numberchange}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand" label="-" name="-" onclick={calculate}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout >
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="7" name="7" onclick={numberchange}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="8" name="8" onclick={numberchange}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="9" name="9" onclick={numberchange}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand" label="*" name="*"  onclick={calculate}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="CLR" name="clr" onclick={clearall}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand-outline" label="0" name="0" onclick={numberchange}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="success" label="=" name="=" onclick={calculate}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <lightning-button title="1" variant="brand" label="/" name="/"  onclick={calculate}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+   <!-- </div>-->
+    </lightning-card>
+
+
+
+
+    </template>

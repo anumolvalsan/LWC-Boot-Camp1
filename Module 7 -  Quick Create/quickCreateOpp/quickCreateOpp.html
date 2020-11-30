@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+
+            <template if:false={showAll}>
+                <lightning-button variant="Base" label="Show All Opportunity Fields" title="Show All Account Fields" onclick={handleClick} class="slds-m-right_x-small"></lightning-button>
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    fields = {fields}
+                    onsuccess={handleSuccess}>
+                    
+                </lightning-record-form>
+            </template>
+            <template if:true={showAll}>
+                <lightning-button variant="Base" label="Hide All Opportunity Fields" title="Hide All Account Fields" 
+                layout-type="Full" mode="edit"
+                onclick={handleClick} class="slds-m-right_x-small"></lightning-button>
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    fields = {allfields}
+                    onsuccess={handleSuccess}>
+                    
+                </lightning-record-form>
+            </template>
+        
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="IF ELSE Demo" icon-name="custom:custom19">
+        <div class="slds-m-around_medium" align="center">
+            <template if:true={istom}>
+                <img src={tom}>
+               <!-- <lightning-button variant="brand" label="Show Jerry" title="I Want to See Jerry" onclick={showJerry} class="slds-m-left_x-small"></lightning-button>-->
+                
+            </template>
+            <template if:false={istom}>
+                <img src={jerry}>
+                <!--<lightning-button variant="brand" label="Show Tom" title="I Want to See Tom" onclick={showTom} class="slds-m-left_x-small"></lightning-button>-->
+            </template>
+            <lightning-button variant="brand" label={butLabel} title="Want to See my friend?" onclick={show} class="slds-m-left_x-small"></lightning-button>
+            
+            
+        </div>
+    </lightning-card>
+</template>
