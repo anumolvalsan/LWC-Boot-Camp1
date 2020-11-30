@@ -1,0 +1,13 @@
+<template>
+    <lightning-card icon-name="standard:omni_supervisor" title="Grand Parent">
+        <div>
+            {count} of {total} children selected &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <lightning-button variant="brand" label="Reset All" onclick={resetall}></lightning-button>
+        </div>
+        <div>
+            <c-parent onclickbutton={clickfromgp}></c-parent>
+        </div>
+        
+    </lightning-card>
+    
+</template>

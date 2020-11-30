@@ -1,0 +1,26 @@
+<template>
+
+
+    <lightning-card title="Parent" icon-name="standard:person_account" >
+        <table class="slds-table slds-table_bordered slds-table_striped" style="table-layout: fixed; width: 50%" >
+            <tbody>
+                <tr>
+                    <template if:true={children}>
+                    <template for:each={children} for:item="ch" for:index="index">
+                        <td key={ch.childname}>
+                           <p>{ch.childname}: &nbsp;{ch.stat}</p> 
+                           
+                                <c-child key={ch.childname} childname={ch.childname} onclickbutton={clickfromparent}>
+                                   <!-- <span slot="title">{ch.name}</span>-->
+                                </c-child>
+                             
+                        </td>
+                    </template>
+                </template>
+                </tr>
+            </tbody>
+        </table>
+    
+    </lightning-card>
+    
+</template>
