@@ -12,7 +12,7 @@ export default class GrandParent extends LightningElement {
     }
 
     resetall(){
-        //this.template.querySelector('c-parent').reset(true);
-        window.location.reload();
+        this.template.querySelector('c-parent').reset();
+       // window.location.reload();
     }
 }

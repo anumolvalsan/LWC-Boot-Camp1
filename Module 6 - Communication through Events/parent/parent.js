@@ -36,16 +36,23 @@ export default class Parent extends LightningElement {
                 }*/
                 
             }
-          /*  @api
-            reset(doresetfp){
-                alert('do reset'+ doresetfp);
-                this.doreset = doresetfp;
-                alert('do reset'+ this.doreset);
+            @api
+            reset(){
+                //alert('do reset'+ doresetfp);
+               // this.doreset = doresetfp;
+                alert('do reset');
                 this.children.forEach( ch=>{
                     //ch.childname = 'Select';
                     ch.stat='Deselected';
                 });
-
-                this.template.querySelector('c-child').resetme(true);
-            }*/
+                //this.template.querySelectorAll('c-child').resetme(true);
+                const child= this.template.querySelectorAll('c-child');
+                console.log('child : '+child);
+                if(child){
+                    child.forEach(ch=>{
+                        ch.resetme();  
+                    });
+                    
+                }
+            }
 }

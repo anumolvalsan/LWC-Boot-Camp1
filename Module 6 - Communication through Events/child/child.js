@@ -32,10 +32,10 @@ export default class Child extends LightningElement {
             this.dispatchEvent(custEve);
     }
 
-  /*  @api
-    resetme(wanttoreset){
-        alert('want to reset ? '+wanttoreset);
+    @api
+    resetme(){
+        alert('want to reset ? ');
         this.buttonLabel = 'Select';
         this.varient='submit';
-    }*/
+    }
 }
