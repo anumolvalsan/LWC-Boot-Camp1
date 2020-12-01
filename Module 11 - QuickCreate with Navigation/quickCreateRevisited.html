@@ -1,0 +1,27 @@
+<template>
+    <lightning-combobox
+        name="progress"
+        label="Select Object"
+        value={selectedvalue}
+        placeholder="Select Object"
+        options={options}
+        onchange={handleChange}
+        required
+    ></lightning-combobox>
+    <br/><br/>
+    <template if:true={showNew}>
+        <lightning-button label="New Record" onclick={navigateme}></lightning-button>
+    </template>
+    <br/><br/>
+    <template if:true={showacc}>
+        <c-quick-create-acc></c-quick-create-acc>
+    </template>
+    <template if:true={showopp}>
+        <c-quick-create-opp ></c-quick-create-opp>
+    </template>
+    <template if:true={showcon}>
+        <c-quick-create-contact ></c-quick-create-contact>
+    </template>
+    
+    
+</template>
