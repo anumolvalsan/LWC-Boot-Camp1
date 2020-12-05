@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Search Account">
+        <div>
+            <lightning-input type="search" onchange={handleKeyChange} value={accname} placeholder="search account name..."></lightning-input>
+            <template if:true={showacc}>
+                <template if:true={accounts.data}>
+                    <template for:each={accounts.data} for:item="account">
+                        <div class="slds-grid slds-grid_vertical" key={account.Id}>
+                            <button class="slds-button" onclick={getCons} value={account.Id}>
+                                <lightning-card title={account.Name} icon-name="standard:account">
+                                    &nbsp;&nbsp;{account.AccountNumber}&nbsp;&bull;&nbsp; {account.Industry}&nbsp;&bull;&nbsp; {account.Type}&nbsp;&bull;&nbsp; {account.AnnualRevenue}
+                                </lightning-card>
+                            </button>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <template if:true={showcon}>
+        <p>Inside contacts</p>
+        <lightning-card title="Selected Account" icon-name="standard:account">
+            <template for:each={accDetails.data} for:item="acc">
+                <div key={acc.id}>
+                    <strong>acc.Name</strong>
+                    <p>
+                        &nbsp;&nbsp;{acc.AccountNumber}&nbsp;&bull;&nbsp; {acc.Industry}&nbsp;&bull;&nbsp; {acc.Type}&nbsp;&bull;&nbsp; {acc.AnnualRevenue}
+                    </p>
+
+                </div>
+            </template>
+            
+
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Reset Search" onclick={handleReset}></lightning-button>
+            </div>
+            <lightning-datatable
+                columns={columns}
+                data={cons}
+                key-field="id"
+                hide-checkbox-column="">
+            </lightning-datatable>
+
+        </lightning-card>
+
+    
+    </template>
+   
+</template>
