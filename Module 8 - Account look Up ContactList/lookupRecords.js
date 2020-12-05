@@ -12,13 +12,15 @@ const columns = [
 
 export default class SampleSearch extends LightningElement {
      @track accname;
-     @track accDetails;
      @track accid;
      @track cons=[];
      @track errors;
+     @track accdetails;
      @track showcon=false;
      @track showacc=false;
      columns = columns;
+     @track name;
+     @track accdet;
 
      
 
@@ -30,10 +32,10 @@ export default class SampleSearch extends LightningElement {
 
      /**
       * Wire method to get selected  account
-      */
+      
      @wire(getAccount,{accid: '$accid'})
-     accDetails
-
+     accDetails;
+*/
      handleKeyChange(event){
          const s = event.target.value;
          this.accname = s;
@@ -52,6 +54,12 @@ export default class SampleSearch extends LightningElement {
     getCons(event){
         this.accid = event.currentTarget.value;
         console.log('ACC ID:  '+this.accid);
+      /*  this.name = this.template.querySelector('lightning-card');
+        var det ='';
+        const c = this.template.querySelectorAll('lightning-card');
+        array.forEach(element => {
+            
+        }); */
         
         //calling the imperative method to get the contacts
         getContacts({
@@ -66,6 +74,17 @@ export default class SampleSearch extends LightningElement {
             console.log('Error: '+error);
             this.showcon = true;
             this.errors=error;
+        })
+
+        getAccount({
+            accid : this.accid
+        })
+        .then(result =>{
+            this.accdetails =result;
+            console.log('SINGLE ACC' + this.accdetails)
+        })
+        .catch(error=>{
+            console.log('SINGLE ACC err'+error)
         })
     }
 }
